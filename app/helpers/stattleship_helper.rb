@@ -13,11 +13,8 @@ module StattleshipHelper
     end
     
     def load
-      byebug
-      SPORTS.each do |sport|
-        
+      SPORTS.each do |sport|        
         @games = schedule(sport: sport)
-        byebug
         @games.each do |game|
           "#{game.name} in #{game.city}"
         end
