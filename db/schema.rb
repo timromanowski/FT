@@ -11,20 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324232240) do
+ActiveRecord::Schema.define(version: 20160325205401) do
 
   create_table "games", force: :cascade do |t|
-    t.string   "label",        limit: 255
-    t.string   "name",         limit: 255
-    t.string   "slug",         limit: 255
-    t.string   "title",        limit: 255
-    t.integer  "timestamp",    limit: 4
+    t.string   "label",          limit: 255
+    t.string   "name",           limit: 255
+    t.string   "slug",           limit: 255
+    t.string   "title",          limit: 255
+    t.integer  "timestamp",      limit: 4
     t.datetime "started_at"
-    t.integer  "home_team_id", limit: 4
-    t.integer  "away_team_id", limit: 4
-    t.integer  "venue_id",     limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "home_team_id",   limit: 4
+    t.integer  "away_team_id",   limit: 4
+    t.integer  "venue_id",       limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "stattleship_id", limit: 255
+    t.integer  "league_id",      limit: 4
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -38,32 +40,34 @@ ActiveRecord::Schema.define(version: 20160324232240) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "hashtag",    limit: 255
-    t.integer  "league_id",  limit: 4
-    t.integer  "venue_id",   limit: 4
-    t.string   "location",   limit: 255
-    t.float    "latitude",   limit: 24
-    t.float    "longitude",  limit: 24
-    t.string   "name",       limit: 255
-    t.string   "nickname",   limit: 255
-    t.string   "slug",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "hashtag",        limit: 255
+    t.integer  "league_id",      limit: 4
+    t.integer  "venue_id",       limit: 4
+    t.string   "location",       limit: 255
+    t.float    "latitude",       limit: 24
+    t.float    "longitude",      limit: 24
+    t.string   "name",           limit: 255
+    t.string   "nickname",       limit: 255
+    t.string   "slug",           limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "stattleship_id", limit: 255
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string   "abbreviation", limit: 255
-    t.string   "city",         limit: 255
-    t.string   "country",      limit: 255
-    t.string   "field_type",   limit: 255
-    t.float    "latitude",     limit: 24
-    t.float    "longitude",    limit: 24
-    t.string   "name",         limit: 255
-    t.string   "slug",         limit: 255
-    t.string   "state",        limit: 255
-    t.string   "time_zone",    limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "abbreviation",   limit: 255
+    t.string   "city",           limit: 255
+    t.string   "country",        limit: 255
+    t.string   "field_type",     limit: 255
+    t.float    "latitude",       limit: 24
+    t.float    "longitude",      limit: 24
+    t.string   "name",           limit: 255
+    t.string   "slug",           limit: 255
+    t.string   "state",          limit: 255
+    t.string   "time_zone",      limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "stattleship_id", limit: 255
   end
 
 end
