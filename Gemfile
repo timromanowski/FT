@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'stattleship-ruby', '0.1.6', git: 'https://github.com/stattleship/stattleship-ruby.git'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

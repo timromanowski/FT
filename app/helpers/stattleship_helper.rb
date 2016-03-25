@@ -8,7 +8,7 @@ module StattleshipHelper
     
     private
     
-    SPORTS = ['hockey'].freeze #,'basketball', 'football',  'baseball'].freeze
+    SPORTS = ['hockey', 'basketball', 'football',  'baseball'].freeze
     
     @current_league
     @games
