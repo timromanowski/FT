@@ -13,24 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160325212412) do
 
-  create_table "chains", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "hashtag",     limit: 255
-    t.text     "description", limit: 65535
-    t.string   "address1",    limit: 255
-    t.string   "address2",    limit: 255
-    t.string   "city",        limit: 255
-    t.string   "region",      limit: 255
-    t.string   "country",     limit: 255
-    t.string   "postal_code", limit: 255
-    t.float    "latitude",    limit: 24
-    t.float    "longitude",   limit: 24
-    t.integer  "owner_id",    limit: 4
-    t.integer  "chain_id",    limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string   "label",          limit: 255
     t.string   "name",           limit: 255
@@ -76,14 +58,6 @@ ActiveRecord::Schema.define(version: 20160325212412) do
     t.string   "name",        limit: 255
     t.string   "hashtag",     limit: 255
     t.text     "description", limit: 65535
-    t.string   "address1",    limit: 255
-    t.string   "address2",    limit: 255
-    t.string   "city",        limit: 255
-    t.string   "region",      limit: 255
-    t.string   "country",     limit: 255
-    t.string   "postal_code", limit: 255
-    t.float    "latitude",    limit: 24
-    t.float    "longitude",   limit: 24
     t.integer  "owner_id",    limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
