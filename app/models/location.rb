@@ -24,4 +24,6 @@ class Location < ActiveRecord::Base
                      :distance_field_name => :distance,
                      :lat_column_name => :latitude,
                      :lng_column_name => :longitude
+  #geocoded_by :address
+  #after_validation :geocode, :if => :address_changed?
 end

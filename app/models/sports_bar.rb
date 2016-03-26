@@ -14,4 +14,5 @@
 class SportsBar < ActiveRecord::Base
   has_many :locations
   belongs_to :owner, :class_name => 'User', :foreign_key => 'owner_id'
+  
 end

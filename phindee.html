@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>phindee - happy hours in downtown Portland</title>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta content="Phindee helps you easily find current happy hours in downtown Portland." name="description" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui" name="viewport" />
+    <link data-turbolinks-track="true" href="/assets/application-936ce9c83062d0036c10470dc12adfd4.css" media="all" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="5LmzPPFcJpDy28twQXMlxY7ZMum/wW7qgM3Q1gMSgdQ=" name="csrf-token" />
+</head>
+
+<body>
+    <form class="search-form"><img alt="Search icon" class="search-icon" src="/assets/search-icon-254d8fcc90f1a01258d1c102c3ea66f5.svg" />
+        <input class="search-field" type="text" />
+    </form>
+    <div id="map"></div>
+    <div class="sidebar">
+        <header>
+            <h1>phindee</h1>
+            <p>there are currently <b>12</b> happy hours in downtown portland</p>
+            <dl><dt><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /></dt>
+                <dd class="food">&#40;food&#41;</dd><dt><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></dt>
+                <dd>&#40;drinks&#41;</dd>
+            </dl>
+        </header>
+        <article>
+            <div class="controls"><a class="add-new-happy-hour" data-remote="true" href="/add">add a new one</a>
+                <button class="show-user-location">show my location</button>
+            </div>
+            <ol>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /></div>
+                    <div class="info">
+                        <h2>east side deli</h2>
+                        <p class="time">8:00pm&ndash;10:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>element restaurant &amp; lounge</h2>
+                        <p class="time">9:00pm&ndash;2:00am</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>fratelli ristorante &amp; bar</h2>
+                        <p class="time">9:00pm&ndash;10:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /></div>
+                    <div class="info">
+                        <h2>heathman restaurant</h2>
+                        <p class="time">2:00pm&ndash;12:00am</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>mccormick &amp; schmick&#39;s</h2>
+                        <p class="time">9:00pm&ndash;11:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>morton&#39;s the steakhouse</h2>
+                        <p class="time">9:00pm&ndash;11:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>on deck sports bar &amp; grill</h2>
+                        <p class="time">9:00pm&ndash;12:00am</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>porto terra</h2>
+                        <p class="time">9:00pm&ndash;11:30pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>romano&#39;s macaroni grill</h2>
+                        <p class="time">9:00pm&ndash;10:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>romano&#39;s macaroni grill</h2>
+                        <p class="time">9:00pm&ndash;11:00pm</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>shigezo</h2>
+                        <p class="time">9:00pm&ndash;12:00am</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+                <li>
+                    <div class="type"><img alt="Silverware" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg" /><img alt="Glass" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg" /></div>
+                    <div class="info">
+                        <h2>yolo lounge</h2>
+                        <p class="time">9:00pm&ndash;2:00am</p>
+                    </div><img alt="Right arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg" /></li>
+            </ol>
+        </article>
+        <footer>
+            <p>&copy; 2016 phindee</p>
+            <p>designed &amp; built by <a class="link" href="http://vladigleba.com">vladi gleba</a></p><a class="link" data-remote="true" href="/feedback">feedback</a></footer>
+    </div>
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u = (("https:" == document.location.protocol) ? "https" : "http") + "://107.170.255.153/piwik/";
+            _paq.push(["setTrackerUrl", u + "piwik.php"]);
+            _paq.push(["setSiteId", "2"]);
+            var d = document,
+                g = d.createElement("script"),
+                s = d.getElementsByTagName("script")[0];
+            g.type = "text/javascript";
+            g.defer = true;
+            g.async = true;
+            g.src = u + "piwik.js";
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" rel="stylesheet" />
+    <script data-turbolinks-track="true" src="/assets/application-66020da29c009318503d9a591509c9a6.js"></script>
+</body>
+
+</html>
