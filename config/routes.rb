@@ -7,6 +7,25 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  
+  scope '/', :name_prefix => 'static_page' do
+    get '/faq', :to => 'welcome#faq'
+    get '/about', :to => 'welcome#about'
+    get '/businesses', :to => 'welcome#businesses'
+    get '/careers', :to => 'welcome#careers'
+    get '/team', :to => 'welcome#team'
+    #match '/blog', :to => 'welcome#blog'
+    get '/media', :to => 'welcome#media'
+    get '/badges', :to => 'welcome#badges'
+    get '/widgets', :to => 'welcome#widgets'
+    get '/support', :to => 'welcome#support'
+    get '/privacy', :to => 'welcome#privacy'
+    get '/howitworks', :to => 'welcome#howitworks'
+    get '/contact', :to => 'welcome#contact'
+    get '/competitor', :to => 'welcome#competitor'
+    get '/fan_away_rules', :to => 'welcome#fan_away_rules'
+    get '/terms_and_conditions', :to => 'welcome#terms_and_conditions'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

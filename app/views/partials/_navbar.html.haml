@@ -1,0 +1,38 @@
+%header
+  .navbar
+    .navbar-inner
+      .container
+        %a.brand{ :href => root_path}= image_tag( 'FTLogo.png' )
+        .ftNavWrap
+          - if user_signed_in?
+            .container
+              %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".nav-collapse"}
+                .iconBars
+                  %span.icon-bar
+                  %span.icon-bar
+                  %span.icon-bar
+                .clear
+              .nav-collapse.collapse
+                %ul.nav
+                  %li= link_to "Home", root_path 
+                  %li= link_to  current_user.name, edit_profile_path(current_user)
+                  %li= link_to "Sign Out", destroy_user_session_path
+                  -#%li= link_to "Who To Follow"
+                  -#%li= link_to "Profile"
+          - else
+            .container
+              %ul.nav
+                %li.dropdown
+                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    Sign In
+                    %strong.caret
+                  .dropdown-menu{:style => "padding:15px; padding-bottom:0px;" }
+                    -#= render :partial => 'shared/sign_in_form'
+             
+        - if user_signed_in?
+          .headerSearch.input-append.search
+            .input-group.fix-text-spacing
+              %input#venue-srch-term.form-control{name: "srch-term", placeholder: "Look Up Sports Bar", type: "text"}/
+              %button#go-venue-btn.btn.btn-default
+                GO
+                

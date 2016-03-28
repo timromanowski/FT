@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require bootstrap-sprockets
+//= require foundation
+//= require twitter/bootstrap
+//= require bootstrap-typeahead-rails
 //= require turbolinks
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

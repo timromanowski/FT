@@ -1,0 +1,9 @@
+%footer
+  .container
+    .row
+      .span6
+        %p.muted.credit
+          © #{Time.now.year} #{t(:company_name)}. #{t(:app_name)} For Fans, By Fans
+      .span6
+        %p.small.muted #{link_to 'Home', root_url} | #{link_to 'Blog', 'http://blog.fantogether.net', :target => '_new' } | #{link_to 'About',about_url} | #{link_to 'Media', media_url} | #{link_to 'Businesses',businesses_url} | #{link_to 'Careers',careers_url} | #{link_to 'Contact', contact_url} | #{link_to t(:terms_of_use), terms_and_conditions_url} | #{link_to t(:privacy_policy), privacy_url}      
+      
