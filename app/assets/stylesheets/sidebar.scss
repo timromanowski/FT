@@ -1,0 +1,35 @@
+.sidebar {
+    width: 425px;
+    z-index: 1000;
+    position: absolute;
+    height: 100%;
+    left: 1.1%;
+    min-width: 195px;
+    min-height: 400px;    
+    background-color: #35465e;
+    /*background: url("/assets/header_slice.png") top left repeat-x;
+    #background-repeat: repeat;*/
+    position: relative;
+}
+
+
+.sidebar .header{
+    background-color: #263142; 
+    height: 200px;  
+    text-align: center;
+}
+
+.sidebar a.brand{
+    display: block;
+    margin: auto;
+    vertical-align: middle;
+    padding-top: 50px;   
+}
+
+.sidebar .controls{
+    background-color: #263142; 
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-color: white;
+    text-align: center;
+}

@@ -10,10 +10,8 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
-    = render :partial => "partials/navbar"
-    .row
-      #map
-      = yield 
+    = yield 
+   
     
   = javascript_include_tag "https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js"
   = javascript_include_tag 'https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'
