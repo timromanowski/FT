@@ -10,25 +10,29 @@
     /*background: url("/assets/header_slice.png") top left repeat-x;
     #background-repeat: repeat;*/
     position: relative;
-}
 
+   .header{
+      background-color: #263142; 
+      height: 200px;  
+      text-align: center;
+    }
 
-.sidebar .header{
-    background-color: #263142; 
-    height: 200px;  
-    text-align: center;
-}
-
-.sidebar a.brand{
-    display: block;
-    margin: auto;
-    vertical-align: middle;
-    padding-top: 50px;   
-}
-
-.sidebar .controls{
+    a.brand{
+     display: block;
+      margin: auto;
+      vertical-align: middle;
+      padding-top: 50px;   
+   }
+   .controls{
     background-color: #263142 !important;
     font-size: 18px;
     text-align: center;
     overflow: hidden;
+    height: 50px;
+    border: 1px solid white; border-width: 1px 0 1px 0 ;
+    div{
+        float:left;
+        width:50%;        
+    }
+   }
 }
