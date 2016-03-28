@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require twitter/bootstrap
-//= require bootstrap-typeahead-rails
 //= require turbolinks
+//= require mapbox.js
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); alert('tim');});

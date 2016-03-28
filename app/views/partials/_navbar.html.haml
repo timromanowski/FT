@@ -1,38 +1,26 @@
-%header
-  .navbar
-    .navbar-inner
-      .container
-        %a.brand{ :href => root_path}= image_tag( 'FTLogo.png' )
-        .ftNavWrap
-          - if user_signed_in?
-            .container
-              %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".nav-collapse"}
-                .iconBars
-                  %span.icon-bar
-                  %span.icon-bar
-                  %span.icon-bar
-                .clear
-              .nav-collapse.collapse
-                %ul.nav
-                  %li= link_to "Home", root_path 
-                  %li= link_to  current_user.name, edit_profile_path(current_user)
-                  %li= link_to "Sign Out", destroy_user_session_path
-                  -#%li= link_to "Who To Follow"
-                  -#%li= link_to "Profile"
-          - else
-            .container
-              %ul.nav
-                %li.dropdown
-                  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                    Sign In
-                    %strong.caret
-                  .dropdown-menu{:style => "padding:15px; padding-bottom:0px;" }
-                    -#= render :partial => 'shared/sign_in_form'
-             
-        - if user_signed_in?
-          .headerSearch.input-append.search
-            .input-group.fix-text-spacing
-              %input#venue-srch-term.form-control{name: "srch-term", placeholder: "Look Up Sports Bar", type: "text"}/
-              %button#go-venue-btn.btn.btn-default
-                GO
-                
+.title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "example-menu"}
+  %button.menu-icon{"data-toggle" => "", :type => "button"}
+  .title-bar-title Menu
+#example-menu.top-bar
+  .top-bar-left
+    %ul.dropdown.menu{"data-dropdown-menu" => ""}
+      %li.menu-text Site Title
+      %li
+        %a{:href => "#"} One
+        %ul.menu.vertical
+          %li
+            %a{:href => "#"} One
+          %li
+            %a{:href => "#"} Two
+          %li
+            %a{:href => "#"} Three
+      %li
+        %a{:href => "#"} Two
+      %li
+        %a{:href => "#"} Three
+  .top-bar-right
+    %ul.menu
+      %li
+        %input{:placeholder => "Search", :type => "search"}/
+      %li
+        %button.button{:type => "button"} Search

@@ -38,6 +38,7 @@ gem 'stattleship-ruby', '0.1.6', git: 'https://github.com/stattleship/stattleshi
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'geokit-rails'
+gem 'mapbox-rails'
 
 
 group :development, :test do

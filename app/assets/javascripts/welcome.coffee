@@ -4,6 +4,6 @@
 $ ->
     L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5rYnYwMjZmdjBsdTh1NjMyNWVrIn0.V1uutJECEvBov61VRx7Xog'
     map = L.mapbox.map('map', 'mapbox.streets').setView([45.52086, -122.679523], 14)
-    L.control.locate().addTo(map)
+    #L.control.locate().addTo(map)
     
 
