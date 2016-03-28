@@ -15,6 +15,7 @@
       #map
       = yield 
     
-      
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true  
+  = javascript_include_tag "https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js"
+  = javascript_include_tag 'https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true 
   = yield :javascript_includes
