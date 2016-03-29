@@ -20,10 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  company_name: "FanTogether Ltd"
+  company_name: "FanTogether"
   app_name: "FanTogether"
   app_pitch: ""
-  general_contact_email: "info@fantogether.net"
+  general_contact_email: "tim.romanowski@gmail.com"
   terms_of_use: "Terms of use"
   privacy_policy: "Privacy Policy"
 
