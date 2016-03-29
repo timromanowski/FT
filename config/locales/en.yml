@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  company_name: "FanTogether Ltd"
+  app_name: "FanTogether"
+  app_pitch: ""
+  general_contact_email: "info@fantogether.net"
+  terms_of_use: "Terms of use"
+  privacy_policy: "Privacy Policy"
+
+
+  activerecord:
+    attributes:
+      user:
+        locality: "City"
+        region: "State"

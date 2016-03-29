@@ -1,13 +1,16 @@
-.sidebar
-  .header
-    %a.brand{ :href => root_path }= image_tag( 'FTLogo.png' )
-  .article
-    .controls
-      .sign_in
-        Sign In
-      .select_date
-        Date Select
-      
+.row
+  .small-3.columns.sidebar
+    .header
+      %a.brand{ :href => root_path }= image_tag( 'FTLogo.png' )
+    .article
+      .controls
+        .sign_in
+          Sign In
+        .select_date
+          Date Select
+    %footer.footer
+      %p.muted.credit
+        © #{Time.now.year} #{t(:company_name)}. #{t(:app_name)} For Fans, By Fans  
         
       
   
