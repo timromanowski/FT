@@ -4,6 +4,7 @@
 #
 #  id                   :integer          not null, primary key
 #  sport_bar_id         :integer
+#  name                 :string(255)
 #  location_description :text(65535)
 #  logo                 :string(255)
 #  address1             :string(255)

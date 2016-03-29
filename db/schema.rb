@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160329050141) do
 
   create_table "locations", force: :cascade do |t|
     t.integer  "sport_bar_id",         limit: 4
+    t.string   "name",                 limit: 255
     t.text     "location_description", limit: 65535
     t.string   "logo",                 limit: 255
     t.string   "address1",             limit: 255

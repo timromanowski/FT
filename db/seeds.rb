@@ -55,6 +55,7 @@ json.each do |bar|
    #  tv_count             :integer
    #  permalink            :string(255)
    location = Location.create!( :sport_bar_id => sb.id, 
+                                :name => bar['name'],
                                 :location_description => bar['description'],
                                 :logo => bar['logo'],
                                 :email => bar['contact_email'],
