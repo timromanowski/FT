@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     get '/terms_and_conditions', :to => 'welcome#terms_and_conditions'
   end
 
+  resources :locations
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

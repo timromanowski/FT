@@ -40,6 +40,7 @@ gem 'devise'
 gem 'geokit-rails'
 gem 'mapbox-rails'
 gem 'friendly_id', '~> 5.1.0'
+gem 'geokit-rails'
 
 
 group :development, :test do
