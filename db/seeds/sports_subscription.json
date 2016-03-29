@@ -1,0 +1,71 @@
+[
+	{
+		"provider" : "DirecTv",
+		"name" : "NFL Sunday Ticket",
+		"logo_file" : "subscriptions/nfl_sunday_ticket.gif",
+		"league_id" : 4
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "MLB Extra Innings",
+		"logo_file" : "subscriptions/mlb_extra_innings.gif",
+		"league_id" : 3
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "NBA League Pass",
+		"logo_file" : "subscriptions/nba_league_pass.gif",
+		"league_id" : 2
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "NHL Center Ice",
+		"logo_file" : "subscriptions/nhl_center_ice.gif",
+		"league_id" : 1
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "ESPN Full Court",
+		"logo_file" : "subscriptions/espn_full_court.gif"
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "ESPN GamePlan",
+		"logo_file" : "subscriptions/espn_gameplan.gif"
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "MLS DirectKick",
+		"logo_file" : "subscriptions/mls_directkick.gif"
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "Fox Soccer Plus",
+		"logo_file" : "subscriptions/fox_soccer_plus.gif"
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "CricketTicket",
+		"logo_file" : "subscriptions/cricketticket.gif"
+	},
+	{
+		"provider" : "DirecTv",
+		"name" : "Nascar HotPass",
+		"logo_file" : "subscriptions/nascar_hotpass.gif"
+	},
+	{
+		"provider" : "All",
+		"name" : "Pac-12 Network",
+		"logo_file" : "subscriptions/pac_12_network.jpg"
+	},
+	{
+		"provider" : "All",
+		"name" : "NFL Network",
+		"logo_file" : "subscriptions/nfl_network.png"
+	},
+	{
+		"provider" : "All",
+		"name" : "NHL Network",
+		"logo_file" : "subscriptions/nhl_network.png"
+	}
+]

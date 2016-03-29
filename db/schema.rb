@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325212412) do
+ActiveRecord::Schema.define(version: 20160329050141) do
 
   create_table "games", force: :cascade do |t|
     t.string   "label",          limit: 255
@@ -39,9 +39,17 @@ ActiveRecord::Schema.define(version: 20160325212412) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "location_sports_subscriptions", force: :cascade do |t|
+    t.integer  "location_id",            limit: 4
+    t.integer  "sports_subscription_id", limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.integer  "sport_bar_id",         limit: 4
     t.text     "location_description", limit: 65535
+    t.string   "logo",                 limit: 255
     t.string   "address1",             limit: 255
     t.string   "address2",             limit: 255
     t.string   "city",                 limit: 255
@@ -50,17 +58,46 @@ ActiveRecord::Schema.define(version: 20160325212412) do
     t.string   "postal_code",          limit: 255
     t.float    "latitude",             limit: 24
     t.float    "longitude",            limit: 24
+    t.string   "phone_number",         limit: 255
+    t.string   "email",                limit: 255
+    t.string   "website",              limit: 255
+    t.string   "facebook_page",        limit: 255
+    t.string   "twitter_handle",       limit: 255
+    t.integer  "tv_count",             limit: 4
+    t.string   "permalink",            limit: 255
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
 
   create_table "sports_bars", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "hashtag",     limit: 255
-    t.text     "description", limit: 65535
-    t.integer  "owner_id",    limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",           limit: 255
+    t.string   "hashtag",        limit: 255
+    t.text     "description",    limit: 65535
+    t.string   "logo",           limit: 255
+    t.integer  "owner_id",       limit: 4
+    t.string   "email",          limit: 255
+    t.string   "website",        limit: 255
+    t.string   "facebook_page",  limit: 255
+    t.string   "twitter_handle", limit: 255
+    t.string   "permalink",      limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "sports_bars_games", force: :cascade do |t|
+    t.integer  "sports_bar_id", limit: 4
+    t.integer  "game_id",       limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "sports_subscriptions", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "logo_file",  limit: 255
+    t.string   "provider",   limit: 255
+    t.integer  "league_id",  limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "teams", force: :cascade do |t|
