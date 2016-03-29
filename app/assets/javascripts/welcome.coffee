@@ -17,6 +17,7 @@ $ ->
 		url: '/locations.json'
 		success: (data) ->
 			geojson = $.parseJSON(data)
+			console.log(geojson)
 			map.featureLayer.setGeoJSON(geojson)
 
 
