@@ -137,12 +137,18 @@ module StattleshipHelper
       if @current_league.nil? or @current_league.stattleship_id != stattleship_league.id 
         @current_league = League.find_by_stattleship_id( stattleship_league.id )
         if @current_league.nil?
-          @current_league = League.create( stattleship_id: stattleship_league.id, 
-                          name: stattleship_league.name, 
-                          slug: stattleship_league.slug, 
-                          abbreviation: stattleship_league.abbreviation,
-                          sport: stattleship_league.sport )
-          @current_league.save!
+          @current_league = League.find_by_slug( stattleship_league.slug )
+          if @current_league.nil?
+            @current_league = League.create( stattleship_id: stattleship_league.id, 
+                            name: stattleship_league.name, 
+                            slug: stattleship_league.slug, 
+                            abbreviation: stattleship_league.abbreviation,
+                            sport: stattleship_league.sport )
+            @current_league.save!
+          else
+            @current_league.stattleship_id = stattleship_league.id
+            @current_league.save!
+        end
         end
       end
       return @current_league

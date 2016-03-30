@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160329050141) do
     t.string   "slug",           limit: 255
     t.string   "abbreviation",   limit: 255
     t.string   "sport",          limit: 255
+    t.string   "logo",           limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

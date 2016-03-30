@@ -6,6 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+json = ActiveSupport::JSON.decode(File.read('db/seeds/leagues.json'))
+
+json.each do |a|
+  #  stattleship_id :string(255)
+  #  name           :string(255)
+  #  slug           :string(255)
+  #  abbreviation   :string(255)
+  #  sport          :string(255)
+  League.create!(
+  :stattleship_id => a['stattleship_id'],
+  :name => a['name'],
+  :slug => a['slug'],
+  :abbreviation => a['abbreviation'],
+  :sport => a['sport'],
+  :logo => a['logo']  
+  )
+end
+
+
 json = ActiveSupport::JSON.decode(File.read('db/seeds/sports_subscription.json'))
 
 json.each do |a|
@@ -13,7 +32,6 @@ json.each do |a|
 end
 
 json = ActiveSupport::JSON.decode(File.read('db/seeds/sports_bars.json'))
-
 json.each do |bar|
   
   #name           :string(255)
@@ -73,5 +91,10 @@ json.each do |bar|
                                 :permalink => bar['permalink'],
                                 :tv_count => bar['tv_count']
    )
+   
+   
+   loader = StattleshipHelper::Loader.new
+   loader.load
+   
   
 end

@@ -26,4 +26,5 @@ class Game < ActiveRecord::Base
   has_many :sports_bars, :through => :sports_bar_games 
   
   scope :on_today, -> { ( where('started_at between ? and ?', DateTime.now, DateTime.now.end_of_day)) }
+  scope :on_date, -> ( date ){ ( where('started_at between ? and ?', date.beginning_of_day, date.end_of_day)) }
 end

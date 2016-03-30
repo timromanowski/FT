@@ -6,6 +6,7 @@ class CreateLeagues < ActiveRecord::Migration
       t.string :slug
       t.string :abbreviation
       t.string :sport       
+      t.string :logo
       t.timestamps null: false
     end
   end

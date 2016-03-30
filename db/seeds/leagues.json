@@ -1,0 +1,38 @@
+[
+	{
+		"id" : 1,
+		"stattleship_id" : "48803e9e-c4ec-414a-a85d-9abfa6e9cfd9",
+		"name" : "National Hockey League",
+		"slug" : "nhl",
+		"abbreviation" : "NHL",
+		"sport" : "hockey",
+        "logo" : "leagues/hockey.png"
+	},
+	{
+		"id" : 2,
+		"stattleship_id" : "3c805f57-ef31-407d-b633-54bac8745b9e",
+		"name" : "National Basketball Association",
+		"slug" : "nba",
+		"abbreviation" : "NBA",
+		"sport" : "basketball",
+        "logo" : "leagues/basketball.png"
+	},
+	{
+		"id" : 3,
+		"stattleship_id" : "cb399a17-e581-4f1a-9535-ea3bcb09fa1f",
+		"name" : "Major League Baseball",
+		"slug" : "mlb",
+		"abbreviation" : "MLB",
+		"sport" : "baseball",
+        "logo" : "leagues/baseball.png"
+	},
+	{
+		"id" : 4,
+		"stattleship_id" : "",
+		"name" : "National Football League",
+		"slug" : "nfl",
+		"abbreviation" : "NFL",
+		"sport" : "football",
+        "logo" : "leagues/football.png"
+	}
+]
