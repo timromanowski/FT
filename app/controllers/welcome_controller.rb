@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @games = Game.on_date( DateTime.now )
+    @date = DateTime.now
+    @games = Game.on_date( @date )
     #on_today
   end
 end

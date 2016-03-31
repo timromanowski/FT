@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require foundation-datepicker
+//= require locales/foundation-datepicker.vi    
 //= require_tree .
 
 $(function(){ $(document).foundation();});
