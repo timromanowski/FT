@@ -17,8 +17,8 @@ class LocationsController < ApplicationController
 					id:  location.id,
 					name: location.name,
 					address: location.address1,
-					:'marker-color' => '#00607d',
-					:'marker-symbol' => 'circle',
+					:'marker-color' => '#282a2d',
+					:'marker-symbol' => 'beer',
 					:'marker-size' => 'medium'
 				}
 			}

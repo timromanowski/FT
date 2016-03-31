@@ -7,12 +7,14 @@ $ ->
 	map.scrollWheelZoom.disable();
 	new L.Control.Zoom({ position: 'topright' }).addTo(map);
 	L.control.locate({ position: 'bottomright' }).addTo(map)
-
+            
+    
+        
 	# get JSON object
 	# on success, parse it and
 	# hand it over to MapBox for mapping
 	$.ajax
-		data: {lat: 44.5647222, lon:-123.2608333}
+	    data: {lat: 44.5647222, lon:-123.2608333}
 		dataType: 'text'
 		url: '/locations.json'
 		success: (data) ->

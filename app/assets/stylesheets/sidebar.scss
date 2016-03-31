@@ -11,6 +11,7 @@
     #background-repeat: repeat;*/
     position: relative;
     margin-left: 25px;
+    color: #fff;
 
    .header{
       background-color: #292c2f; 
@@ -36,6 +37,10 @@
         width:50%;        
     }
     
+    p{
+        padding-top:5px;
+    }
+    
     
    }
 }
@@ -46,14 +51,53 @@
 }
 
 .game_row {
-    padding: 14px 3.5%;
-    background-color: #45484d;
-    border-bottom: 1px solid #5e5e5e;
-    text-align: left;
-    padding: 22px 3.5%;
-    overflow: auto;
-    list-style-type: none;
-    transition: background 300ms, color 300ms;
-    -moz-transition: background 300ms, color 300ms;
-    -webkit-transition: background 300ms, color 300ms;
+    
+    
+    -webkit-transition: color 0.2s ease-out;
+        -webkit-transition-delay: 0s;
+        -moz-transition: color 0.2s ease-out 0s;
+        -o-transition: color 0.2s ease-out 0s;
+        transition: color 0.2s ease-out 0s;
+        background-color: #45484d;
+        border-bottom: 1px solid #5e5e5e;
+        text-align: left;
+        padding: 22px 3.5% 8px;
+        overflow: auto;
+        list-style-type: none;
+        transition: background 300ms, color 300ms;
+        -moz-transition: background 300ms, color 300ms;
+        -webkit-transition: background 300ms, color 300ms;
+        
+    .league_img{
+        float:left;
+        margin-top: 10px;
+        height: 20px;       
+        
+        img{
+            height:33px;
+        }
+    }       
+    
+    .info{
+        width: 74%;
+        margin: 0 4%;
+        float: left;
+        
+        h2{
+
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 1.1em;
+        }
+    }
+    
+    .arrow {
+        margin-top: 10px;
+        height: 20px;
+        float: right;
+    }
+}
+
+.game_row:hover {
+    background-color: #282a2d !important
 }
