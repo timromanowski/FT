@@ -35,7 +35,7 @@ module StattleshipHelper
       return if stattleship_game.nil? 
       
       
-      game = Game.find_by_stattleship_id( stattleship_game.id )
+      game = Game.find_by_slug( stattleship_game.slug )
       if game.nil?
           
           league = get_league( stattleship_game.league )
@@ -70,7 +70,7 @@ module StattleshipHelper
     
     def get_team( stattleship_team, league )
       return if stattleship_team.nil? 
-      team = Team.find_by_stattleship_id( stattleship_team.id ) 
+      team = Team.find_by_slug( stattleship_team.slug ) 
       if team.nil?
         #  hashtag        :string(255)
         #  league_id      :integer
@@ -112,7 +112,7 @@ module StattleshipHelper
       #  state          :string(255)
       #  time_zone      :string(255)
       #  stattleship_id :string(255)
-      venue = Venue.find_by_stattleship_id( stattleship_venue.id ) 
+      venue = Venue.find_by_slug( stattleship_venue.slug ) 
       if venue.nil?
         venue = Venue.create( abbreviation: stattleship_venue.abbreviation,
                               city: stattleship_venue.city,
@@ -133,7 +133,7 @@ module StattleshipHelper
     end
     
     def get_league( stattleship_league )
-      return if stattleship_league.nil?             
+      return if stattleship_league.nil?   
       if @current_league.nil? or @current_league.stattleship_id != stattleship_league.id 
         @current_league = League.find_by_stattleship_id( stattleship_league.id )
         if @current_league.nil?

@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20160329050141) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "location_games", force: :cascade do |t|
+    t.integer  "location_id", limit: 4
+    t.integer  "game_id",     limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "location_sports_subscriptions", force: :cascade do |t|
     t.integer  "location_id",            limit: 4
     t.integer  "sports_subscription_id", limit: 4
@@ -84,13 +91,6 @@ ActiveRecord::Schema.define(version: 20160329050141) do
     t.string   "permalink",      limit: 255
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-  end
-
-  create_table "sports_bars_games", force: :cascade do |t|
-    t.integer  "sports_bar_id", limit: 4
-    t.integer  "game_id",       limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
   end
 
   create_table "sports_subscriptions", force: :cascade do |t|

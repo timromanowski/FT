@@ -74,6 +74,15 @@ $(function(){
         });
     });
     
+    $('.search-field').keypress(function (e) {
+     var key = e.which;
+     if(key == 13)  // the enter key code
+      {
+        $("#changemap").click();
+        return false;  
+      }
+    });
+    
     changeMap( 44.5647222, -123.2608333 );
         
 });

@@ -93,8 +93,8 @@ json.each do |bar|
    )
    
    
-   loader = StattleshipHelper::Loader.new
-   loader.load
+   #loader = StattleshipHelper::Loader.new
+   #loader.load
    
   
 end

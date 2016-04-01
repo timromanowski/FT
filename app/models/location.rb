@@ -31,6 +31,9 @@ class Location < ActiveRecord::Base
   has_many :location_sports_subscription
   has_many :sports_subscriptions, :through => :location_sports_subscription
   
+  has_many :location_games
+  has_many :games, :through => :location_games
+  
   acts_as_mappable :default_units => :miles,
                      :default_formula => :sphere,
                      :distance_field_name => :distance,
