@@ -1,14 +1,40 @@
+var key = L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5rYnYwMjZmdjBsdTh1NjMyNWVrIn0.V1uutJECEvBov61VRx7Xog';
+var map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false } )
+var geocoder = L.mapbox.geocoder('mapbox.places');
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+function changeMap(lat, lon){
+    map.setView([lat, lon], 12);  
+	$.ajax({
+        data: {lat: lat, lon:lon},
+        dataType: 'text',
+        url: '/locations.json',
+        success: function(data){
+            geojson = $.parseJSON(data);
+            myLayer.setGeoJSON(geojson);
+        }
+    });
+}
+
 $(function(){ 
-	
-
-    L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5rYnYwMjZmdjBsdTh1NjMyNWVrIn0.V1uutJECEvBov61VRx7Xog';
-    var map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false } ).setView([44.5647222, -123.2608333], 14);
-    map.scrollWheelZoom.disable(); 
-
-
-    var myLayer = L.mapbox.featureLayer().addTo(map)
-    new L.Control.Zoom({ position: 'topright' }).addTo(map)
-    L.control.locate({ position: 'bottomright' }).addTo(map)
+    
+    
+    $('#date_select').fdatepicker().on('changeDate', function (ev) {
+    	$.ajax({
+            data: {date:ev.date},
+            dataType: 'text',
+            url: '/welcome/fordate',
+            success: function(data){
+                $('.games').fadeOut('slow', function() {
+                    $('.games').html(data);
+                    $('.games').fadeIn('slow');
+                });               
+            }
+        });
+    });
+    map.scrollWheelZoom.disable();     
+    new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+    //var lc =L.control.locate({ position: 'bottomright'}).addTo(map);
             
     myLayer.on( 'layeradd', function(e) {
         marker = e.layer;
@@ -26,25 +52,29 @@ $(function(){
                         '<p class="address">' + properties.address + '</p>' +
                         '</div>';
 
-        '<div class="popup"><div class="logo"><span>food+drinks</span><img alt="Silverware" height="22" src="/assets/silverware-9d0a4d173d9e135f903fccb2d009de22.svg"><img alt="Glass" height="22" src="/assets/glass-9b07ca51d32a1325e6e433eae1e1612d.svg"></div><div class="info"><h3 class="popup-title">bluehour</h3><p class="hours">4:00pm–6:00pm</p><p class="address">250 nw 13th ave.</p></div><img alt="Right arrow" class="right-arrow" src="/assets/right-arrow-0d1ba3c494d476ab7d0906cf7e933e26.svg"></div>';
-   
 
         marker.bindPopup(popupContent,{
                 closeButton: false,
                 minWidth: 320
         });
     });
-        
-	$.ajax({
-        data: {lat: 44.5647222, lon:-123.2608333},
-        dataType: 'text',
-        url: '/locations.json',
-        success: function(data){
-            geojson = $.parseJSON(data);
-            console.log(geojson);
-            myLayer.setGeoJSON(geojson);
-        }
+    
+    $("#changemap").click(function(){
+        var postalCode = $(".search-field").val();
+        geocoder.query(postalCode, function(err, data) {
+            // The geocoder can return an area, like a city, or a
+            // point, like an address. Here we handle both cases,
+            // by fitting the map bounds to an area or zooming to a point.
+            if (data.lbounds) {
+                map.fitBounds(data.lbounds);
+            }
+            if (data.latlng) {
+                changeMap( data.latlng[0], data.latlng[1] );
+            }
+        });
     });
+    
+    changeMap( 44.5647222, -123.2608333 );
         
 });
 

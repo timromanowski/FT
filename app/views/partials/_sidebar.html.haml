@@ -1,25 +1,16 @@
 .row
-  .small-3.columns.sidebar
+  .small-9.medium-5.small-centered.columns.sidebar
     .header
       %a.brand{ :href => root_path }= image_tag( 'FTLogo.png' )
     .article
-      .row
-        -#.text
-        -#  Games On
-        -#.date
-        -#  %input{ "data-date-format" => "mm/dd/yy", :type => "text", :value => @date.strftime('%m/%d/%Y') }
-          
-        #dpMonths.row.collapse.date{"data-date-format" => "mm/yyyy", "data-min-view" => "year", "data-start-view" => "year", :style => "max-width:200px;"}
-          .small-2.columns
-            %span.prefix
-              %i.fa.fa-calendar
-              Games On
-          .small-10.columns
-            %input{:readonly => "readonly", :size => "16", :type => "text", :value => "02/2012"}
+      .control_row
+        .small-4.columns
+          %label{ :for => :date_select, :class => 'prefix right inline' }
+            Games For :
+        .small-6.columns
+          %input{:readonly => "readonly", :size => "16", :type => "text", :value => @date.strftime( "%m/%d/%Y"), :id => "date_select"}
       .games 
-        %ul.games_list
-          - @games.each do |g|
-            = render :partial => "partials/game_row", :locals => { :game => g }
+        = render :partial => "partials/gamelist", :locals => { :games => @games }
     %footer.footer
       %p.muted.credit
         © #{Time.now.year} #{t(:company_name)}
@@ -27,4 +18,3 @@
         For Fans, By Fans  
         
       
-  

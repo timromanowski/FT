@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require foundation-datepicker
+//= require L.Control.Locate
 //= require locales/foundation-datepicker.vi    
 //= require_tree .
 

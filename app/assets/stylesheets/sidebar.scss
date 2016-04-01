@@ -25,13 +25,22 @@
       vertical-align: middle;
       padding-top: 50px;   
    }
-   .controls{
+   .control_row{
     background-color: #292c2f !important;
     font-size: 17.5px !important;
     text-align: center;
     overflow: hidden;
-    height: 50px;
+    height: 75px;
     border: 1px solid white; border-width: 1px 0 1px 0 ;
+    padding: 1.00rem 1.9rem;
+    color: #fff;
+    
+    label{
+        color: #fff;
+        font-size: 17.5px !important;
+        padding-right:3px;
+        
+    }
     .text{
         float:left;
         width:50%;

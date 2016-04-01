@@ -41,6 +41,7 @@ gem 'geokit-rails'
 gem 'mapbox-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'geokit-rails'
+gem "font-awesome-rails"
 
 
 group :development, :test do
