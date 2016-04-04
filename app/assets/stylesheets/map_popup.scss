@@ -1,3 +1,58 @@
 .map_popup{
+    font-family: 'Quicksand Book', Arial, sans-serif;
+    overflow: auto;
+    color: #fff;
+    cursor: pointer;
     
+    -webkit-transition: color 0.2s ease-out;
+    -webkit-transition-delay: 0s;
+    -moz-transition: color 0.2s ease-out 0s;
+    -o-transition: color 0.2s ease-out 0s;
+    transition: color 0.2s ease-out 0s;
+    background-color: #45484d;
+    border-bottom: 1px solid #5e5e5e;
+    text-align: left;
+    padding: 15px;
+    overflow: auto;
+    list-style-type: none;
+    transition: background 300ms, color 300ms;
+    -moz-transition: background 300ms, color 300ms;
+    -webkit-transition: background 300ms, color 300ms;
+    
+    .logo {
+        float:left;
+        margin-top: 10px;
+        height: 20px;       
+        
+        img{
+            height:33px;
+        }
+    }     
+    
+    .info{
+        width: 74%;
+        margin: 0 4%;
+        float: left;
+        
+        h2{
+
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 1.1em;
+        }
+    }
+    
+    .fi-monitor{
+        margin-right:4px;
+    }
+    
+    .arrow {
+        background-image: image-url("right-arrow.svg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        margin-top: 8px;
+        height: 40px;
+        width: 40px;
+        float: right;
+    }
 }

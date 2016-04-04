@@ -28,6 +28,8 @@ class LocationsController < ApplicationController
           logo: ActionController::Base.helpers.asset_path( location.logo ),
           game_date:@date,
           game_ids:game_ids,
+          :'marker-highlight-color' => '#282a2d',
+          :'marker-grey-color' => '#bbb',
 					:'marker-color' => '#282a2d',
 					:'marker-symbol' => 'beer',
 					:'marker-size' => 'medium'
