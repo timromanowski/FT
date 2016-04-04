@@ -20,7 +20,7 @@ function changeMap(lat, lon){
 function hasGameOn(game_id) {
     for (var i = 0; i < geoJson.length; i++) {
         games = geoJson[i].properties['game_ids'];
-        if (games.indexOf(selected_game_id) < 0) {
+        if (games.indexOf(game_id) < 0) {
             geoJson[i].properties['marker-color'] = geoJson[i].properties['marker-grey-color'];
         }
         myLayer.setGeoJSON(geoJson);

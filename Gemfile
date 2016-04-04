@@ -43,6 +43,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'geokit-rails'
 gem "font-awesome-rails"
 gem 'foundation-icons-sass-rails'
+gem 'rack-tracker'
 
 
 group :development, :test do
@@ -51,6 +52,8 @@ group :development, :test do
   gem 'minitest-byebug'
   gem 'annotate'
   gem "erb2haml" 
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
 group :development do
@@ -59,5 +62,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'pg'
+  gem 'unicorn'
 end
 
