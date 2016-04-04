@@ -2,7 +2,6 @@ var key = L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5
 var map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false } )
 var geocoder = L.mapbox.geocoder('mapbox.places');
 var myLayer = L.mapbox.featureLayer().addTo(map);
-var selected_game_id;
 var geoJson = "";
 
 function changeMap(lat, lon){
@@ -111,6 +110,10 @@ $(function(){
     
     $('#map').on('click', '.map_popup', function() {
         alert('Hello from Toronto!');
+    });
+    
+    myLayer.on('click', function(e) {
+        map.panTo(e.layer.getLatLng());
     });
     
     $( ".game_row" ).click( function(){
