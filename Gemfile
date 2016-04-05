@@ -37,13 +37,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'stattleship-ruby', '0.1.6', git: 'https://github.com/stattleship/stattleship-ruby.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
-gem 'geokit-rails'
 gem 'mapbox-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'geokit-rails'
 gem "font-awesome-rails"
 gem 'foundation-icons-sass-rails'
 gem 'rack-tracker'
+gem 'mina'
 
 
 group :development, :test do
@@ -52,8 +52,6 @@ group :development, :test do
   gem 'minitest-byebug'
   gem 'annotate'
   gem "erb2haml" 
-  # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
 group :development do
