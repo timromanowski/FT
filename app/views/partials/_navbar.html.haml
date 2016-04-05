@@ -1,0 +1,26 @@
+.title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "example-menu"}
+  %button.menu-icon{"data-toggle" => "", :type => "button"}
+  .title-bar-title Menu
+#example-menu.top-bar
+  .top-bar-left
+    %ul.dropdown.menu{"data-dropdown-menu" => ""}
+      %li.menu-text Site Title
+      %li
+        %a{:href => "#"} One
+        %ul.menu.vertical
+          %li
+            %a{:href => "#"} One
+          %li
+            %a{:href => "#"} Two
+          %li
+            %a{:href => "#"} Three
+      %li
+        %a{:href => "#"} Two
+      %li
+        %a{:href => "#"} Three
+  .top-bar-right
+    %ul.menu
+      %li
+        %input{:placeholder => "Search", :type => "search"}/
+      %li
+        %button.button{:type => "button"} Search
