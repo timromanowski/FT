@@ -8,7 +8,7 @@ require 'mina/git'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '159.203.208.186'
+set :domain, '162.243.128.177'
 set :user, 'fantogether'
 set :deploy_to, "/home/#{user}/app"
 set :repository, 'git@github.com:timromanowski/FT.git'
@@ -55,13 +55,10 @@ task :setup => :environment do
   # Create database.yml for Postgres if it doesn't exist
   path_database_yml = "#{deploy_to}/#{shared_path}/config/database.yml"
   database_yml = %[production:
-    adapter: mysql2
-    encoding: utf8
-    pool: 5
-    username: root
-    password:
-    socket: /tmp/mysql.sock
-  ]
+  database: rails-demo
+  adapter: postgresql
+  pool: 5
+  timeout: 5000]
   queue! %[ test -e #{path_database_yml} || echo "#{database_yml}" > #{path_database_yml} ]
   
   # Create secrets.yml if it doesn't exist

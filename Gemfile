@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'foundation-rails'
@@ -52,6 +52,7 @@ group :development, :test do
   gem 'minitest-byebug'
   gem 'annotate'
   gem "erb2haml" 
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
 group :development do
@@ -63,6 +64,7 @@ group :development do
 end
 
 group :production do
+  gem 'pg'
   gem 'unicorn'
 end
 

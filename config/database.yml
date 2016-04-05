@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: FT_production
-  username: FT
+  username: rails
   password: <%= ENV['FT_DATABASE_PASSWORD'] %>
