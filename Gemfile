@@ -43,7 +43,6 @@ gem 'geokit-rails'
 gem "font-awesome-rails"
 gem 'foundation-icons-sass-rails'
 gem 'rack-tracker'
-gem 'mina'
 
 
 group :development, :test do
