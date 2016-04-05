@@ -55,10 +55,13 @@ task :setup => :environment do
   # Create database.yml for Postgres if it doesn't exist
   path_database_yml = "#{deploy_to}/#{shared_path}/config/database.yml"
   database_yml = %[production:
-  database: rails-demo
-  adapter: postgresql
-  pool: 5
-  timeout: 5000]
+    adapter: mysql2
+    encoding: utf8
+    pool: 5
+    username: root
+    password:
+    socket: /tmp/mysql.sock
+  ]
   queue! %[ test -e #{path_database_yml} || echo "#{database_yml}" > #{path_database_yml} ]
   
   # Create secrets.yml if it doesn't exist
