@@ -1,103 +1,49 @@
-require 'mina/bundler'
-require 'mina/rails'
-require 'mina/git'
-require 'mina/rbenv'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-# Basic settings:
-#   domain       - The hostname to SSH to.
-#   deploy_to    - Path to deploy into.
-#   repository   - Git repo to clone from. (needed by mina/git)
-#   branch       - Branch name to deploy. (needed by mina/git)
+set :application, 'fantogether'
+set :repo_url, 'git@github.com:timromanowski/FT.git'
+set :rvm_ruby_version, '2.2.1@FT'
 
-set :rails_env, 'production'
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-set :domain, '107.170.204.5'
-set :user, 'fantogether'
-set :deploy_to, "/home/#{user}/app"
-set :repository, 'git@github.com:timromanowski/FT.git'
-set :branch, 'master'
+# Default deploy_to directory is /var/www/my_app_name
+# set :deploy_to, '/var/www/my_app_name'
 
-# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
-# They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
+# Default value for :scm is :git
+# set :scm, :git
 
-# Optional settings:
-#   set :user, 'foobar'    # Username in the server to SSH to.
-#   set :port, '30000'     # SSH port number.
-#   set :forward_agent, true     # SSH forward_agent.
+# Default value for :format is :pretty
+# set :format, :pretty
 
-task :environment do
-  # If you're using rbenv, use this to load the rbenv environment.
-  # Be sure to commit your .rbenv-version to your repository.
-  invoke :'rbenv:load'
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-  # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use[ruby-2.0.0-p481@default]'
-end
+# Default value for :pty is false
+# set :pty, true
 
-task :setup => :environment do
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
+# Default value for :linked_files is []
+# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
-  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
-  
-  # Add the repository server to .ssh/known_hosts
-  if repository
-    repo_host = repository.split(%r{@|://}).last.split(%r{:|\/}).first
-    repo_port = /:([0-9]+)/.match(repository) && /:([0-9]+)/.match(repository)[1] || '22'
+# Default value for linked_dirs is []
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
-    queue! %[
-      if ! ssh-keygen -H  -F #{repo_host} &>/dev/null; then
-        ssh-keyscan -t rsa -p #{repo_port} -H #{repo_host} >> ~/.ssh/known_hosts
-      fi
-    ]
-  end
-  
-  # Create database.yml for Postgres if it doesn't exist
-  path_database_yml = "#{deploy_to}/#{shared_path}/config/database.yml"
-  database_yml = %[production:
-  database: FT_production
-  adapter: postgresql
-  pool: 5
-  timeout: 5000]
-  queue! %[ test -e #{path_database_yml} || echo "#{database_yml}" > #{path_database_yml} ]
-  
-  # Create secrets.yml if it doesn't exist
-  path_secrets_yml = "#{deploy_to}/#{shared_path}/config/secrets.yml"
-  secret = 
-  secrets_yml = %[production:
-  secret_key_base:
-    #{`rake secret`.strip}]
-  queue! %[ test -e #{path_secrets_yml} || echo "#{secrets_yml}" > #{path_secrets_yml} ]
-  
-  queue! %[chmod g+rx,u+rwx,o-rwx "#{deploy_to}/#{shared_path}/config"]
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-end
+# Default value for keep_releases is 5
+# set :keep_releases, 5
 
-desc "Deploys the current version to the server."
-task :deploy => :environment do
-  to :before_hook do
-    # Put things to run locally before ssh
-  end
-  deploy do
-    # Put things that will set up an empty directory into a fully set-up
-    # instance of your project.
-    invoke :'git:clone'
-    invoke :'deploy:link_shared_paths'
-    invoke :'bundle:install'
-    invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
-    invoke :'deploy:cleanup'
+namespace :deploy do
 
-    to :launch do
-      queue "service #{user} restart"
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
-end
 
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
+end

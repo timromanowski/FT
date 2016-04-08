@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: FT_production
-  username: rails
-  password: <%= ENV['FT_DATABASE_PASSWORD'] %>
+  database: <your database name here>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: fantogether
+  password: 
