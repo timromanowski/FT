@@ -19,7 +19,7 @@ require 'capistrano/rails'
 #require 'capistrano/rvm'
 require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-require 'capistrano/bundler'
+#require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 #require 'capistrano/passenger'
@@ -27,6 +27,7 @@ require 'capistrano/safe_deploy_to'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.0'
+set :rbenv_custom_path, '/home/deploy/.rbenv/'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
