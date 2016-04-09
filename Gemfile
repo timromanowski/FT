@@ -63,9 +63,9 @@ group :development do
   
   gem 'capistrano'
   gem 'capistrano-ext'
-  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-unicorn-nginx', '~> 3.2.0'
   gem 'capistrano-safe-deploy-to', '~> 1.1.1'
 end
 
