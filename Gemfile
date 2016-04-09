@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'stattleship-ruby', '0.1.6', git: 'https://github.com/stattleship/stattleship-ruby.git'
+#gem 'stattleship-ruby', '0.1.6', git: 'https://github.com/stattleship/stattleship-ruby.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'mapbox-rails'
@@ -63,7 +63,6 @@ group :development do
   
   gem 'capistrano'
   gem 'capistrano-ext'
-  gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-safe-deploy-to', '~> 1.1.1'
