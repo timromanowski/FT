@@ -24,6 +24,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 #require 'capistrano/passenger'
 require 'capistrano/safe_deploy_to'
+require 'capistrano/github'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.0'
