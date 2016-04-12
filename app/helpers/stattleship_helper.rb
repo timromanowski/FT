@@ -1,4 +1,4 @@
-#require 'Stattleship'
+require 'Stattleship'
 
 module StattleshipHelper
   class Loader

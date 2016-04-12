@@ -1,6 +1,5 @@
-GIT
-  remote: http://github.com/stattleship/stattleship-ruby.git
-  revision: e6676841f58129bd3c37136bd271fad7d301372c
+PATH
+  remote: vendor/gems/stattleship-ruby-0.1.10
   specs:
     stattleship-ruby (0.1.10)
       addressable (~> 2.3, <= 2.3.8)
