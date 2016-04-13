@@ -1,2 +1,4 @@
-loader = StattleshipHelper::Loader.new
+require 'stattleship_loader'
+
+loader = StattleshipLoader.new
 loader.load
