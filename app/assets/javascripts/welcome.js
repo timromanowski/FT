@@ -30,11 +30,14 @@ function hasGameOn(game_id) {
 
 $(function(){    
     
-    $('#date_select').fdatepicker().on('changeDate', function (ev) {
-    	$.ajax({
-            data: {date:ev.date},
+    $('#date_select').fdatepicker({
+        format: 'mm/dd/yyyy'
+    }).on('changeDate', function (ev) {
+        var date = ev.date.getUTCDate() + '/' + ev.date.getUTCMonth() + '/' + ev.date.getUTCFullYear() + ' 00:00:00 -0500';
+       $.ajax({
+            data: {date:date},
             dataType: 'text',
-            url: '/welcome/fordate',
+            url: '/games/for_date',
             success: function(data){
                 $('.games').fadeOut('slow', function() {
                     $('.games').html(data);
