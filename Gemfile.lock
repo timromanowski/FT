@@ -275,7 +275,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
-  stattleship-ruby (= 0.1.12)!
+  stattleship-ruby!
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
