@@ -1,3 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'
+require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+
 require 'Stattleship'
 
   class StattleshipLoader
@@ -33,6 +39,7 @@ require 'Stattleship'
     def save_game( stattleship_game )
       return if stattleship_game.nil? 
       
+      p "#{stattleship_game.name} in #{stattleship_game.city}"
       
       game = Game.find_by_slug( stattleship_game.slug )
       if game.nil?
@@ -63,7 +70,7 @@ require 'Stattleship'
                               away_team_id: away_team.id,
                               venue_id: venue.nil? ? nil : venue.id )          
           game.save! 
-          p "#{stattleship_game.name} in #{stattleship_game.city}"
+          p " -- SAVED"
       end      
     end
     
