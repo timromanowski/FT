@@ -1,4 +1,2 @@
-require 'stattleship_loader'
-
-loader = StattleshipLoader.new
+loader = FTStattleship::StattleshipLoader.new
 loader.load

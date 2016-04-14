@@ -1,6 +1,6 @@
-module Stattleship
+module FTStattleship
 
-  class FtLoader
+  class StattleshipLoader
     
     require 'dotenv'
     Dotenv.load
