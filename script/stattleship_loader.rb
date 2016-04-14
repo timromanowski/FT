@@ -1,4 +1,4 @@
-module FTStattleship
+require 'Stattleship'
 
   class StattleshipLoader
     
@@ -167,3 +167,6 @@ module FTStattleship
                       reverse
     end    
   end
+    loader = StattleshipLoader.new
+    loader.load
+

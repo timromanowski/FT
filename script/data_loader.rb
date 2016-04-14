@@ -1,2 +1,2 @@
-loader = FTStattleship::StattleshipLoader.new
+loader = StattleshipLoader.new
 loader.load
