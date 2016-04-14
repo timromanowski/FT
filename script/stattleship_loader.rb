@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 
-ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'production'
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
-
-require 'Stattleship'
+require File.expand_path(File.dirname(__FILE__) +'/../lib/Stattleship')
 
   class StattleshipLoader
     

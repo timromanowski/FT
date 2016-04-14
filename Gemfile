@@ -74,7 +74,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-safe-deploy-to', '~> 1.1.1'
-  gem 'capistrano-github', github: 'capistrano/github'
+  #gem 'capistrano-github', github: 'capistrano/github'
 end
 
 group :production do
