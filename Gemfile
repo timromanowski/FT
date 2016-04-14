@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -36,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem 'stattleship-ruby', path: 'vendor/gems/stattleship-ruby-0.1.10' 
 #:git => 'http://github.com/stattleship/stattleship-ruby.git'
-gem 'stattleship-ruby', git: 'https://github.com/stattleship/stattleship-ruby.git'
+#gem 'stattleship-ruby', git: 'https://github.com/stattleship/stattleship-ruby.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'mapbox-rails'
@@ -46,6 +47,10 @@ gem "font-awesome-rails"
 gem 'foundation-icons-sass-rails'
 gem 'rack-tracker'
 gem 'addressable'
+gem 'link_header'
+gem 'ordinalize'
+gem 'roar'
+gem 'virtus'
 
 
 group :development, :test do
