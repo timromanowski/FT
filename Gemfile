@@ -69,13 +69,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   
-  #gem 'capistrano'
-  #gem 'capistrano-ext'
-  #gem 'capistrano-rbenv'
-  #gem 'capistrano-rails', '~> 1.1'
-  #gem 'capistrano-safe-deploy-to', '~> 1.1.1'
-  #gem 'capistrano-github', github: 'capistrano/github'
-  #gem 'octokit', github: 'octokit/octokit.rb', branch: 'deployments-preview'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-safe-deploy-to', '~> 1.1.1'
+  gem 'capistrano-github', github: 'capistrano/github'
 end
 
 group :production do
