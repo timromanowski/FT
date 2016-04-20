@@ -280,7 +280,7 @@ DEPENDENCIES
   link_header
   mapbox-rails
   minitest-byebug
-  mysql2 (>= 0.3.13, < 0.5)
+  mysql2
   ordinalize
   pg
   rack-tracker

@@ -59,7 +59,7 @@ group :development, :test do
   gem 'minitest-byebug'
   gem 'annotate'
   gem "erb2haml" 
-  gem 'mysql2', '>= 0.3.13', '< 0.5'
+  gem 'mysql2'
 end
 
 group :development do
