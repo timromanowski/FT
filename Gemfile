@@ -71,7 +71,7 @@ group :development do
   
   gem 'capistrano'
   gem 'capistrano-ext'
-  gem 'capistrano-rbenv'
+  gem 'capistrano-rvm'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-safe-deploy-to', '~> 1.1.1'
   #gem 'capistrano-github', github: 'capistrano/github'
