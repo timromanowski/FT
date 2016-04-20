@@ -21,7 +21,6 @@
 class GamesController < ApplicationController
   
   def for_date
-    byebug
     @date = params[:date].nil? ?  nil : Time.parse( params[:date] )
     @utc_date = params[:utc_date].nil? ? nil :  Time.parse( params[:utc_date] )
     @games = @date.nil? ? Game.on_utc_date( @utc_date ) : Game.on_date( @date )   
