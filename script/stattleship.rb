@@ -3,7 +3,7 @@ require 'addressable/template'
 require 'bigdecimal'
 require 'bigdecimal/util'
 require 'date'
-require 'dotenv'
+#require 'dotenv'
 require 'link_header'
 require 'net/https'
 require 'ordinalize'
@@ -114,4 +114,4 @@ require 'stattleship/football_top_stats'
 require 'stattleship/hockey_top_stats'
 require 'stattleship/baseball_top_stats'
 
-Dotenv.load
+#Dotenv.load

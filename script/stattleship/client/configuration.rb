@@ -25,7 +25,7 @@ module Stattleship
     end
 
     def api_token
-      @api_token || ENV['STATTLESHIP_ACCESS_TOKEN']
+      @api_token || '711750262c2f4a0ee83f4cb0ee3d63e7'#ENV['STATTLESHIP_ACCESS_TOKEN']
     end
 
     def base_uri
