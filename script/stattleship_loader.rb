@@ -1,13 +1,11 @@
 #!/usr/bin/env ruby
 
-ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'production'
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
-require File.expand_path(File.dirname(__FILE__) +'/../lib/Stattleship')
+require File.expand_path(File.dirname(__FILE__) +'/stattleship')
 
   class StattleshipLoader
-    
-    require 'dotenv'
-    Dotenv.load
     
     private
     
@@ -23,9 +21,10 @@ require File.expand_path(File.dirname(__FILE__) +'/../lib/Stattleship')
     public 
     
     def load
+      #@client = StattleshipClient.new
       SPORTS.each do |sport|        
         league = nil
-        @games = schedule(sport: sport)
+        @games = schedule(sport: sport)# @client.fetch(sport)
         @games.each do |game|
           save_game( game )
         end
@@ -36,7 +35,6 @@ require File.expand_path(File.dirname(__FILE__) +'/../lib/Stattleship')
     
     def save_game( stattleship_game )
       return if stattleship_game.nil? 
-      
       p "#{stattleship_game.name} in #{stattleship_game.city}"
       
       game = Game.find_by_slug( stattleship_game.slug )
