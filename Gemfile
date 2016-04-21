@@ -60,6 +60,7 @@ group :development, :test do
   gem 'annotate'
   gem "erb2haml" 
   gem 'mysql2'
+  gem 'pg'
 end
 
 group :development do

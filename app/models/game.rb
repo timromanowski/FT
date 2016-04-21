@@ -3,10 +3,10 @@
 # Table name: games
 #
 #  id             :integer          not null, primary key
-#  label          :string(255)
-#  name           :string(255)
-#  slug           :string(255)
-#  title          :string(255)
+#  label          :string
+#  name           :string
+#  slug           :string
+#  title          :string
 #  timestamp      :integer
 #  started_at     :datetime
 #  home_team_id   :integer
@@ -14,7 +14,7 @@
 #  venue_id       :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  stattleship_id :string(255)
+#  stattleship_id :string
 #  league_id      :integer
 #
 

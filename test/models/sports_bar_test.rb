@@ -3,16 +3,16 @@
 # Table name: sports_bars
 #
 #  id             :integer          not null, primary key
-#  name           :string(255)
-#  hashtag        :string(255)
-#  description    :text(65535)
-#  logo           :string(255)
+#  name           :string
+#  hashtag        :string
+#  description    :text
+#  logo           :string
 #  owner_id       :integer
-#  email          :string(255)
-#  website        :string(255)
-#  facebook_page  :string(255)
-#  twitter_handle :string(255)
-#  permalink      :string(255)
+#  email          :string
+#  website        :string
+#  facebook_page  :string
+#  twitter_handle :string
+#  permalink      :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

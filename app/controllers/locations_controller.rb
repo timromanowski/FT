@@ -4,24 +4,24 @@
 #
 #  id                   :integer          not null, primary key
 #  sport_bar_id         :integer
-#  name                 :string(255)
-#  location_description :text(65535)
-#  logo                 :string(255)
-#  address1             :string(255)
-#  address2             :string(255)
-#  city                 :string(255)
-#  region               :string(255)
-#  country              :string(255)
-#  postal_code          :string(255)
-#  latitude             :float(24)
-#  longitude            :float(24)
-#  phone_number         :string(255)
-#  email                :string(255)
-#  website              :string(255)
-#  facebook_page        :string(255)
-#  twitter_handle       :string(255)
+#  name                 :string
+#  location_description :text
+#  logo                 :string
+#  address1             :string
+#  address2             :string
+#  city                 :string
+#  region               :string
+#  country              :string
+#  postal_code          :string
+#  latitude             :float
+#  longitude            :float
+#  phone_number         :string
+#  email                :string
+#  website              :string
+#  facebook_page        :string
+#  twitter_handle       :string
 #  tv_count             :integer
-#  permalink            :string(255)
+#  permalink            :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 
 		@geojson = Array.new
 		@locations.each do |location|
-      
+      next if location.longitude.nil? or location.latitude.nil?
       game_ids = []
       if !@date.nil?
         game_ids = location.games.on_date( @date ).map(&:id) 
@@ -56,11 +56,11 @@ class LocationsController < ApplicationController
           logo: ActionController::Base.helpers.asset_path( location.logo ),
           game_date:@date,
           game_ids:game_ids,
-          :'marker-highlight-color' => '#282a2d',
-          :'marker-grey-color' => '#bbb',
-					:'marker-color' => '#282a2d',
-					:'marker-symbol' => 'beer',
-					:'marker-size' => 'medium'
+          'marker-highlight-color': '#282a2d',
+          'marker-grey-color': '#bbb',
+					'marker-color': '#282a2d',
+					'marker-symbol': 'beer',
+					'marker-size': 'medium'
 				}
 			}
 		end
