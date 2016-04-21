@@ -27,6 +27,8 @@
 #
 
 class LocationsController < ApplicationController
+  
+  before_action :set_variant, only: [:show, :update, :destroy, :edit]
 
 	def index
 		@game_id = params[:game_id]
@@ -69,4 +71,21 @@ class LocationsController < ApplicationController
 			format.json { render json: @geojson }  # respond with the created JSON object
 		end
 	end
+  
+  def show
+    @location = Location.find(params[:id])
+    respond_to do |format|      
+      format.html do |variant|
+         variant.modal { render partial: 'partials/location_modal_content'} 
+         variant.none
+       end
+			format.json { render json: @location }  # respond with the created JSON object
+		end
+  end
+  
+  private 
+  
+  def set_variant
+    request.variant = :modal if params[:variant] == 'modal'
+  end
 end

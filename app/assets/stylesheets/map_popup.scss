@@ -1,7 +1,9 @@
+@import "colors";
+
 .map_popup{
     font-family: 'Quicksand Book', Arial, sans-serif;
     overflow: auto;
-    color: #fff;
+    color: $white;
     cursor: pointer;
     
     -webkit-transition: color 0.2s ease-out;
@@ -9,8 +11,8 @@
     -moz-transition: color 0.2s ease-out 0s;
     -o-transition: color 0.2s ease-out 0s;
     transition: color 0.2s ease-out 0s;
-    background-color: #45484d;
-    border-bottom: 1px solid #5e5e5e;
+    background-color: $abbey;
+    border-bottom: 1px solid $scorpion;
     text-align: left;
     padding: 15px;
     overflow: auto;
