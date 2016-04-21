@@ -3,12 +3,12 @@
 # Table name: leagues
 #
 #  id             :integer          not null, primary key
-#  stattleship_id :string(255)
-#  name           :string(255)
-#  slug           :string(255)
-#  abbreviation   :string(255)
-#  sport          :string(255)
-#  logo           :string(255)
+#  stattleship_id :string
+#  name           :string
+#  slug           :string
+#  abbreviation   :string
+#  sport          :string
+#  logo           :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

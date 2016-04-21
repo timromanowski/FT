@@ -13,142 +13,145 @@
 
 ActiveRecord::Schema.define(version: 20160329050141) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: :cascade do |t|
-    t.string   "label",          limit: 255
-    t.string   "name",           limit: 255
-    t.string   "slug",           limit: 255
-    t.string   "title",          limit: 255
-    t.integer  "timestamp",      limit: 4
+    t.string   "label"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "title"
+    t.integer  "timestamp"
     t.datetime "started_at"
-    t.integer  "home_team_id",   limit: 4
-    t.integer  "away_team_id",   limit: 4
-    t.integer  "venue_id",       limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "stattleship_id", limit: 255
-    t.integer  "league_id",      limit: 4
+    t.integer  "home_team_id"
+    t.integer  "away_team_id"
+    t.integer  "venue_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "stattleship_id"
+    t.integer  "league_id"
   end
 
   create_table "leagues", force: :cascade do |t|
-    t.string   "stattleship_id", limit: 255
-    t.string   "name",           limit: 255
-    t.string   "slug",           limit: 255
-    t.string   "abbreviation",   limit: 255
-    t.string   "sport",          limit: 255
-    t.string   "logo",           limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "stattleship_id"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "abbreviation"
+    t.string   "sport"
+    t.string   "logo"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "location_games", force: :cascade do |t|
-    t.integer  "location_id", limit: 4
-    t.integer  "game_id",     limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "location_id"
+    t.integer  "game_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "location_sports_subscriptions", force: :cascade do |t|
-    t.integer  "location_id",            limit: 4
-    t.integer  "sports_subscription_id", limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.integer  "sport_bar_id",         limit: 4
-    t.string   "name",                 limit: 255
-    t.text     "location_description", limit: 65535
-    t.string   "logo",                 limit: 255
-    t.string   "address1",             limit: 255
-    t.string   "address2",             limit: 255
-    t.string   "city",                 limit: 255
-    t.string   "region",               limit: 255
-    t.string   "country",              limit: 255
-    t.string   "postal_code",          limit: 255
-    t.float    "latitude",             limit: 24
-    t.float    "longitude",            limit: 24
-    t.string   "phone_number",         limit: 255
-    t.string   "email",                limit: 255
-    t.string   "website",              limit: 255
-    t.string   "facebook_page",        limit: 255
-    t.string   "twitter_handle",       limit: 255
-    t.integer  "tv_count",             limit: 4
-    t.string   "permalink",            limit: 255
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
-
-  create_table "sports_bars", force: :cascade do |t|
-    t.string   "name",           limit: 255
-    t.string   "hashtag",        limit: 255
-    t.text     "description",    limit: 65535
-    t.string   "logo",           limit: 255
-    t.integer  "owner_id",       limit: 4
-    t.string   "email",          limit: 255
-    t.string   "website",        limit: 255
-    t.string   "facebook_page",  limit: 255
-    t.string   "twitter_handle", limit: 255
-    t.string   "permalink",      limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  create_table "sports_subscriptions", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "logo_file",  limit: 255
-    t.string   "provider",   limit: 255
-    t.integer  "league_id",  limit: 4
+    t.integer  "location_id"
+    t.integer  "sports_subscription_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.integer  "sport_bar_id"
+    t.string   "name"
+    t.text     "location_description"
+    t.string   "logo"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "region"
+    t.string   "country"
+    t.string   "postal_code"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "website"
+    t.string   "facebook_page"
+    t.string   "twitter_handle"
+    t.integer  "tv_count"
+    t.string   "permalink"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "sports_bars", force: :cascade do |t|
+    t.string   "name"
+    t.string   "hashtag"
+    t.text     "description"
+    t.string   "logo"
+    t.integer  "owner_id"
+    t.string   "email"
+    t.string   "website"
+    t.string   "facebook_page"
+    t.string   "twitter_handle"
+    t.string   "permalink"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "sports_subscriptions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "logo_file"
+    t.string   "provider"
+    t.integer  "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teams", force: :cascade do |t|
-    t.string   "hashtag",        limit: 255
-    t.integer  "league_id",      limit: 4
-    t.integer  "venue_id",       limit: 4
-    t.string   "location",       limit: 255
-    t.float    "latitude",       limit: 24
-    t.float    "longitude",      limit: 24
-    t.string   "name",           limit: 255
-    t.string   "nickname",       limit: 255
-    t.string   "slug",           limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "stattleship_id", limit: 255
+    t.string   "hashtag"
+    t.integer  "league_id"
+    t.integer  "venue_id"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "slug"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "stattleship_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.string   "abbreviation",   limit: 255
-    t.string   "city",           limit: 255
-    t.string   "country",        limit: 255
-    t.string   "field_type",     limit: 255
-    t.float    "latitude",       limit: 24
-    t.float    "longitude",      limit: 24
-    t.string   "name",           limit: 255
-    t.string   "slug",           limit: 255
-    t.string   "state",          limit: 255
-    t.string   "time_zone",      limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "stattleship_id", limit: 255
+    t.string   "abbreviation"
+    t.string   "city"
+    t.string   "country"
+    t.string   "field_type"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "state"
+    t.string   "time_zone"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "stattleship_id"
   end
 
 end

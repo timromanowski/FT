@@ -3,9 +3,9 @@
 # Table name: sports_subscriptions
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
-#  logo_file  :string(255)
-#  provider   :string(255)
+#  name       :string
+#  logo_file  :string
+#  provider   :string
 #  league_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
