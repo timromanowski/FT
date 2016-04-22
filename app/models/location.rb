@@ -45,4 +45,8 @@ class Location < ActiveRecord::Base
   def full_address 
     "#{address1} #{city} #{postal_code}"
   end
+  
+  def tv_number
+    ( tv_count.nil? or tv_count <= 0 ) ? "NA" : tv_count.to_s
+  end
 end
