@@ -1,6 +1,6 @@
 #modal-content
   #modal-map
-    %img{:alt => "Mapbox Map of #{@location.latitude},#{@location.longitude}", :src => "https://api.mapbox.com/v4/mapbox.emerald/pin-m-beer+282a2d(#{@location.longitude},#{@location.latitude})/#{@location.longitude},#{@location.latitude},15/600x300@2x.png?access_token=#{ENV['MAPBOX_ACCESS_TOKEN']}", :width => "600"}
+    %img{:alt => "Mapbox Map of #{@location.latitude},#{@location.longitude}", :src => "https://api.mapbox.com/v4/mapbox.emerald/pin-m-beer+282a2d(#{@location.longitude},#{@location.latitude})/#{@location.longitude},#{@location.latitude},15/600x300@2x.png?access_token=#{MAP_CONFIG['token']}", :width => "600"}
   %section.details
     .row
       .small-8.medium-8.large-8.columns
