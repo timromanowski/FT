@@ -1,4 +1,4 @@
-var key = L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5rYnYwMjZmdjBsdTh1NjMyNWVrIn0.V1uutJECEvBov61VRx7Xog';
+var key = L.mapbox.accessToken = mb;
 var map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false } )
 var geocoder = L.mapbox.geocoder('mapbox.places');
 var myLayer = L.mapbox.featureLayer().addTo(map);
