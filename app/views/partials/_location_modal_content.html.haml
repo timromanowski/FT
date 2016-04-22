@@ -21,7 +21,8 @@
           %li
             %p
               %i.fi-mail
-              = @location.email
+              = mail_to @location.email
+			  
           - if @location.website
             %li
               %p
