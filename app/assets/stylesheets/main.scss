@@ -1,9 +1,11 @@
+@import "colors";
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
+  color: $mine-shaft;
 }
 
 .columns{
@@ -24,5 +26,5 @@ body {
 }
 
 .muted {
-  color: #999999;
+  color: $dust-gray;
 }

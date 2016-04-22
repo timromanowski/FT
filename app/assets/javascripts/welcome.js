@@ -1,8 +1,9 @@
-var key = L.mapbox.accessToken = 'pk.eyJ1IjoidGltcm9tYW5vd3NraSIsImEiOiJjaW04bG5rYnYwMjZmdjBsdTh1NjMyNWVrIn0.V1uutJECEvBov61VRx7Xog';
+var key = L.mapbox.accessToken = mb;
 var map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false } )
 var geocoder = L.mapbox.geocoder('mapbox.places');
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geoJson = "";
+var visible = null;
 
 function changeMap(lat, lon){
     map.setView([lat, lon], 12);  
@@ -89,17 +90,22 @@ $(function(){
     
     $("#changemap").click(function(){
         var postalCode = $(".search-field").val();
-        geocoder.query(postalCode, function(err, data) {
-            // The geocoder can return an area, like a city, or a
-            // point, like an address. Here we handle both cases,
-            // by fitting the map bounds to an area or zooming to a point.
-            if (data.lbounds) {
-                map.fitBounds(data.lbounds);
-            }
-            if (data.latlng) {
-                changeMap( data.latlng[0], data.latlng[1] );
-            }
-        });
+		if( postalCode != "" ){		
+	        geocoder.query(postalCode, function(err, data) {
+				if( err || !data ){
+					return;
+				}
+	            // The geocoder can return an area, like a city, or a
+	            // point, like an address. Here we handle both cases,
+	            // by fitting the map bounds to an area or zooming to a point.
+	            if (data.lbounds) {
+	                map.fitBounds(data.lbounds);
+	            }
+	            if (data.latlng) {
+	                changeMap( data.latlng[0], data.latlng[1] );
+	            }
+	        });
+		}
     });
     
     $('.search-field').keypress(function (e) {
@@ -111,11 +117,21 @@ $(function(){
       }
     });
     
-    $('#map').on('click', '.map_popup', function() {
-        alert('Hello from Toronto!');
+    $('#map').on('click', '.map_popup', function(e) {
+		if( visible ){
+		  var modal = $('#location-modal');
+            $.ajax({
+		        data: {variant: "modal" },
+		        url: "locations/" + visible.properties.id		        
+		    }).done(function(resp){
+			  $('.location-modal-content').html(resp);			  
+		      modal.foundation('open'); 
+			});
+		}
     });
     
     myLayer.on('click', function(e) {
+		visible = e.layer.feature;
         map.panTo(e.layer.getLatLng());
     });
     

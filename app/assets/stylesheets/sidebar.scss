@@ -1,3 +1,5 @@
+@import "colors";
+
 .sidebar {
     width: 425px;
     z-index: 1000;
@@ -6,7 +8,7 @@
     left: 1.1%;
     min-width: 195px;
     min-height: 400px;    
-    background-color: #292c2f;
+    background-color: $shark;
     /*background: url("/assets/header_slice.png") top left repeat-x;
     #background-repeat: repeat;*/
     position: relative;
@@ -14,7 +16,7 @@
     color: #fff;
 
    .header{
-      background-color: #292c2f; 
+      background-color: $shark; 
       height: 200px;  
       text-align: center;
     }
@@ -26,7 +28,7 @@
       padding-top: 50px;   
    }
    .control_row{
-    background-color: #292c2f !important;
+    background-color: $shark !important;
     font-size: 17.5px !important;
     text-align: center;
     overflow: hidden;
@@ -36,7 +38,7 @@
     color: #fff;
     
     label{
-        color: #fff;
+        color: $white;
         font-size: 17.5px !important;
         padding-right:3px;
         
@@ -74,8 +76,8 @@
         -moz-transition: color 0.2s ease-out 0s;
         -o-transition: color 0.2s ease-out 0s;
         transition: color 0.2s ease-out 0s;
-        background-color: #45484d;
-        border-bottom: 1px solid #5e5e5e;
+        background-color: $abbey;
+        border-bottom: 1px solid $scorpion;
         text-align: left;
         padding: 22px 3.5% 8px;
         overflow: auto;
@@ -115,5 +117,5 @@
 }
 
 .game_row:hover {
-    background-color: #282a2d !important
+    background-color: $shark !important
 }

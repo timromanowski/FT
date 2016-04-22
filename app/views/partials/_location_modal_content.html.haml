@@ -1,0 +1,51 @@
+#modal-content
+  #modal-map
+    %img{:alt => "Mapbox Map of #{@location.latitude},#{@location.longitude}", :src => "https://api.mapbox.com/v4/mapbox.emerald/pin-m-beer+282a2d(#{@location.longitude},#{@location.latitude})/#{@location.longitude},#{@location.latitude},15/600x300@2x.png?access_token=#{ENV['MAPBOX_ACCESS_TOKEN']}", :width => "600"}
+  %section.details
+    .row
+      .small-8.medium-8.large-8.columns
+        %p.logo
+          %i.fi-shield
+          = @location.name
+        %p.description= @location.location_description
+      .small-4.medium-4.large-4.columns
+        %ul.contact
+          %li
+            %p
+              %i.fi-marker
+              = @location.full_address
+          %li
+            %p
+              %i.fi-telephone
+              = number_to_phone( @location.phone_number )
+          %li
+            %p
+              %i.fi-mail
+              = mail_to @location.email
+			  
+          - if @location.website
+            %li
+              %p
+                %i.fi-web
+                %a{ :href => url_with_protocol( @location.website ), :target => :new }= @location.website
+          %li
+            %p
+              %i.fi-monitor
+              = @location.tv_number
+        
+        %ul.inline-list.social
+          %a{:href => "#"}
+            %i.fi-social-facebook
+          %a{:href => "#"}
+            %i.fi-social-twitter
+    .row
+          
+          
+	  
+      -#%p.coordinates
+      -#  %span.lat= @location.latitude
+      -#  %spab.lon= @location.longitude
+      -#%p.address= @location.full_address
+      -#%p.contact
+      -#  %span.phone= @location.phone_number
+      -#  %span.website= @location.website

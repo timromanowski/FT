@@ -1,16 +1,18 @@
+@import "colors";
+
 .footer {
-  background-color: #292c2f;
+  background-color: $shark;
   text-align: center;
   font-size: 1.2rem;
   padding: 1rem;
   p {
     &.slogan {
-      color: #8d9093;
+      color: $oslo-gray;
       font-size: 1.8rem;
       margin: 0 0 1rem;
     }
     &.copywrite {
-      color: #8f9296;
+      color: $oslo-gray;
       font-size: 0.875rem;
       margin: 0;
     }
@@ -18,7 +20,7 @@
   .links a {
     list-style: none;
     font-weight: bold;
-    color: #ffffff;
+    color: $white;
     padding: 3rem 0 2rem;
     margin: 0;
     &::after {
