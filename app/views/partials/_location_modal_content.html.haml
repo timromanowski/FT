@@ -34,10 +34,12 @@
               = @location.tv_number
         
         %ul.inline-list.social
-          %a{:href => "#"}
-            %i.fi-social-facebook
-          %a{:href => "#"}
-            %i.fi-social-twitter
+          - if @location.facebook_page
+            %a{:href => url_with_protocol( @location.facebook_page ), :target => :new}
+              %i.fi-social-facebook
+          - if @location.twitter_handle
+            %a{:href => "http://twitter.com/#{@location.twitter_handle}", :target => :new}
+              %i.fi-social-twitter
     .row
           
           
