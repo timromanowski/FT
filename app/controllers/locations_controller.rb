@@ -36,6 +36,7 @@ class LocationsController < ApplicationController
 		get_loc( params )
 		@locations = Location.within( @distance, :origin => @loc )
 
+    marker = "#282a2d"
 		@geojson = Array.new
 		@locations.each do |location|
       next if location.longitude.nil? or location.latitude.nil?
@@ -43,6 +44,10 @@ class LocationsController < ApplicationController
       if !@date.nil?
         game_ids = location.games.on_date( @date ).map(&:id) 
       end     
+      
+      if @game_id and @game_id != ""
+        marker = game_ids.include? @game_id ? '#282a2d' : '#bbb'
+      end
       
 			@geojson << {
 				type: 'Feature',
@@ -58,9 +63,7 @@ class LocationsController < ApplicationController
           logo: ActionController::Base.helpers.asset_path( location.logo ),
           game_date:@date,
           game_ids:game_ids,
-          'marker-highlight-color': '#282a2d',
-          'marker-grey-color': '#bbb',
-					'marker-color': '#282a2d',
+          'marker-color': marker,
 					'marker-symbol': 'beer',
 					'marker-size': 'medium'
 				}

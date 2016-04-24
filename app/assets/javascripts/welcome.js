@@ -4,11 +4,15 @@ var geocoder = L.mapbox.geocoder('mapbox.places');
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geoJson = "";
 var visible = null;
+var last_lat = 44.5647222;
+var last_lon = -123.2608333;
 
-function changeMap(lat, lon){
+function changeMap(lat, lon, game_id){
+	last_lat = lat;
+	last_lon = lon;
     map.setView([lat, lon], 12);  
 	$.ajax({
-        data: {lat: lat, lon:lon},
+        data: {lat: lat, lon:lon, game_id:game_id },
         dataType: 'text',
         url: '/locations.json',
         success: function(data){
@@ -24,8 +28,7 @@ function hasGameOn(game_id) {
         if (games.indexOf(game_id) < 0) {
             geoJson[i].properties['marker-color'] = geoJson[i].properties['marker-grey-color'];
         }
-        myLayer.setGeoJSON(geoJson);
-  
+        myLayer.setGeoJSON(geoJson);  
     }
 };
 
@@ -102,7 +105,7 @@ $(function(){
 	                map.fitBounds(data.lbounds);
 	            }
 	            if (data.latlng) {
-	                changeMap( data.latlng[0], data.latlng[1] );
+					changeMap( data.latlng[0], data.latlng[1] );
 	            }
 	        });
 		}
@@ -143,10 +146,11 @@ $(function(){
         //        entity.feature.properties['marker-color'] = "#hdhdhdh";
         //    }
         //});
-        hasGameOn($(this).attr( 'id' ));
+        //hasGameOn($(this).attr( 'id' ));
+		changeMap( last_lat, last_lon, $(this).attr( 'id' ) );
     });
     
-    changeMap( 44.5647222, -123.2608333 );
+    changeMap( last_lat, last_lon, null );
         
 });
 
