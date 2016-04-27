@@ -10,7 +10,7 @@
         .small-6.columns
           %input{:readonly => "readonly", :size => "16", :type => "text", :value => @date.strftime( "%m/%d/%Y"), :id => "date_select"}
       .games 
-        = render :partial => "partials/gamelist", :locals => { :games => @games }
+        = render :partial => "partials/gamelist", :locals => { :games => @games, :modal => false }
     %footer.footer
       %p.muted.credit
         © #{Time.now.year} #{t(:company_name)}

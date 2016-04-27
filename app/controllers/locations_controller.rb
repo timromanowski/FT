@@ -77,6 +77,9 @@ class LocationsController < ApplicationController
   
   def show
     @location = Location.find(params[:id])
+    @date = DateTime.now
+    @games = Game.on_date( @date )
+    @game_ids = @location.games.on_date( @date ).map(&:id) 
     respond_to do |format|      
       format.html do |variant|
          variant.modal { render partial: 'partials/location_modal_content'} 

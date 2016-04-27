@@ -1,8 +1,15 @@
-%li.game_row{ :id => game.id }
+- cls = modal ? "loc_game_row" : "game_row"
+%li{ :class => cls, :id => game.id }
   .league_img
     =image_tag game.league.logo
   .info
     %h2= game.label
     .game_time
       %p= game.started_at.in_time_zone("Eastern Time (US & Canada)").strftime('%l:%M %p %Z')
-  =image_tag "right-arrow.svg", :alt => "Right arrow", :class => "arrow"
+    - if !modal
+      =image_tag "right-arrow.svg", :alt => "Right arrow", :class => "arrow"
+    - else
+      - #on_checked = on_here ?  : ""
+      .game_on_checkbox
+        =check_box_tag "game_#{game.id}_check", game.id, on_here, { :class => 'gameplaying' }
+        %label.check-box{ :for => :gameplaying }

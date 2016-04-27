@@ -40,7 +40,13 @@
           - if @location.twitter_handle
             %a{:href => "http://twitter.com/#{@location.twitter_handle}", :target => :new}
               %i.fi-social-twitter
-    .row
+    .row.fullWidth
+      .large-12.large-centered.text-center.fullWidth
+        %h4 Games Playing Here 
+        = render :partial => "partials/gamelist", :locals => { :games => @games, :playing_games => @game_ids, :modal => true }
+		  
+	  
+	
           
           
 	  

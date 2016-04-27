@@ -1,3 +1,69 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+.games_list{
+    list-style: none;
+    margin: 0;
+}
+
+.game_row, .loc_game_row {
+    
+    
+    -webkit-transition: color 0.2s ease-out;
+        -webkit-transition-delay: 0s;
+        -moz-transition: color 0.2s ease-out 0s;
+        -o-transition: color 0.2s ease-out 0s;
+        transition: color 0.2s ease-out 0s;
+        background-color: $abbey;
+        border-bottom: 1px solid $scorpion;
+        text-align: left;
+        padding: 22px 3.5% 8px;
+        overflow: auto;
+        list-style-type: none;
+        transition: background 300ms, color 300ms;
+        -moz-transition: background 300ms, color 300ms;
+        -webkit-transition: background 300ms, color 300ms;
+        
+    .league_img{
+        float:left;
+        margin-top: 10px;
+        height: 20px;       
+        
+        img{
+            height:33px;
+        }
+    }       
+    
+    .info{
+        width: 74%;
+        margin: 0 4%;
+        float: left;
+        
+        h2{
+
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 1.1em;
+        }
+    }
+    
+    .arrow {
+        margin-top: 10px;
+        height: 20px;
+        float: right;
+    }
+	
+}
+
+.game_row:hover {
+    background-color: $shark !important
+}
+
+.game_on_checkbox{
+	box-sizing: border-box;
+	text-align: center;
+	float:right;
+}
