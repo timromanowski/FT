@@ -1,4 +1,4 @@
 %ul.games_list
   - @games.each do |g|
     - on_here = ( !@game_ids.nil? and @game_ids.include? g.id )
-    = render :partial => "partials/game_row", :locals => { :game => g, :on_here => on_here, :modal => modal }
+    = render :partial => "partials/game_row", :locals => { :game => g, :on_here => on_here, :modal => @modal }

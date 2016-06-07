@@ -128,7 +128,8 @@ $(function(){
 		        url: "locations/" + visible.properties.id		        
 		    }).done(function(resp){
 			  $('.location-modal-content').html(resp);			  
-		      modal.foundation('open'); 
+		      modal.foundation('open');
+			  $('.location-modal-content').foundation();
 			});
 		}
     });
