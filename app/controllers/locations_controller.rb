@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
 
 	def index
 		@game_id = params[:game_id]
-    @date = params[:date].nil? ? Date.today : Time.parse( params[:date] )
+    @date = params[:date].nil? ? DateTime.now : Time.parse( params[:date] )
 		get_loc( params )
 		@locations = Location.within( @distance, :origin => @loc )
 
@@ -77,7 +77,7 @@ class LocationsController < ApplicationController
   
   def show
     @location = Location.find(params[:id])
-    @date = DateTime.now
+    @date = params[:date].nil? ? DateTime.now : Time.parse( params[:date] )
     @games = Game.on_date( @date )
     @game_ids = @location.games.on_date( @date ).map(&:id) 
     respond_to do |format|      

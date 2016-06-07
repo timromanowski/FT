@@ -41,19 +41,12 @@
             %a{:href => "http://twitter.com/#{@location.twitter_handle}", :target => :new}
               %i.fi-social-twitter
     .row.fullWidth
-      .large-12.large-centered.text-center.fullWidth
-        %h4 Games Playing Here 
-        = render :partial => "partials/gamelist", :locals => { :games => @games, :playing_games => @game_ids, :modal => true }
+      - if @games and @games.length > 0
+        .large-12.large-centered.text-center.fullWidth
+          %h4 Games Playing Here 
+          - @modal = true
+          = render :partial => "partials/gamelist", :locals => { :games => @games, :playing_games => @game_ids, :modal => @modal }
 		  
 	  
-	
-          
-          
-	  
-      -#%p.coordinates
-      -#  %span.lat= @location.latitude
-      -#  %spab.lon= @location.longitude
-      -#%p.address= @location.full_address
-      -#%p.contact
-      -#  %span.phone= @location.phone_number
-      -#  %span.website= @location.website
+:javascript
+  // $(function(){ $(document).foundation("reflow");});

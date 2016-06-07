@@ -10,6 +10,12 @@
       =image_tag "right-arrow.svg", :alt => "Right arrow", :class => "arrow"
     - else
       - #on_checked = on_here ?  : ""
-      .game_on_checkbox
-        =check_box_tag "game_#{game.id}_check", game.id, on_here, { :class => 'gameplaying' }
-        %label.check-box{ :for => :gameplaying }
+      -# .game_on_checkbox
+      -#  %fieldset.switch.large
+      -#    -# =check_box_tag "game_#{game.id}_check", game.id, on_here, { :class => 'gameplaying' }
+      -#    %input.switch-input{ :name => "game_#{game.id}_check", :id => "game_#{game.id}_check", :type => "checkbox"}
+      -#      %label.switch-paddle{ :for => "game_#{game.id}_check" }
+      -#        %span.switch-on 
+      -#          Yes
+      -#        %span.swicth-off 
+      -#          No
