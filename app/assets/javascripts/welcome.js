@@ -35,11 +35,50 @@ function hasGameOn(game_id) {
 $(function(){    
     
     $('#date_select').fdatepicker({
+        // UI displays as mm/dd/yyyy
         format: 'mm/dd/yyyy'
     }).on('changeDate', function (ev) {
-        var date = ev.date.getUTCDate() + '/' + ev.date.getUTCMonth() + '/' + ev.date.getUTCFullYear() + ' 00:00:00 -0500';
+
+        /*
+        these are roughly equivalent times
+        utc         pdt
+        7/4 07:00   7/4 00:00
+        7/5 07:00   7/4 23:59
+
+        so when someone picks 7/4/2016 in PDT
+        they want to see events happening between:
+        7/4 07:00 +0  # midnight PDT
+        ... and ...
+        7/5 07:00 +0  # ... and 24 hours later
+        */
+
+
+        // ajax call is posted as yyyy-mm-dd
+        // build local and utc timestamps
+        var uts = ev.date.getUTCFullYear();
+        // month from Date object is in range 0-11
+        uts += "-" + (ev.date.getUTCMonth() + 1);
+        uts += "-" + ev.date.getUTCDate();
+        uts += " " + ev.date.getUTCHours();
+        uts += ":" + ev.date.getUTCMinutes();
+        uts += ":" + ev.date.getUTCSeconds();
+        uts += " +0"
+
+        var lts = ev.date.getFullYear();
+        // month from Date object is in range 0-11
+        lts += "-" + (ev.date.getMonth() + 1);
+        lts += "-" + ev.date.getDate();
+        lts += " " + ev.date.getHours();
+        lts += ":" + ev.date.getMinutes();
+        lts += ":" + ev.date.getSeconds();
+        // offset is local <-> utc in minutes
+        lts += " " + (ev.date.getTimezoneOffset()/60);
+
        $.ajax({
-            data: {date:date},
+            data: {
+                date:lts,
+                utc_date:uts,
+            },
             dataType: 'text',
             url: '/games/for_date',
             success: function(data){
