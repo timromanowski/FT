@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem 'stattleship-ruby', path: 'vendor/gems/stattleship-ruby-0.1.10' 
 #:git => 'http://github.com/stattleship/stattleship-ruby.git'
-#gem 'stattleship-ruby', git: 'https://github.com/stattleship/stattleship-ruby.git'
+gem 'stattleship-ruby', '~> 0.1.23'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'mapbox-rails'
@@ -60,7 +60,6 @@ group :development, :test do
   gem 'annotate'
   gem "erb2haml" 
   gem 'mysql2'
-  gem 'pg'
 end
 
 group :development do
