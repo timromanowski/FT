@@ -16,7 +16,7 @@ require 'mina/unicorn'
 set :domain, '107.170.229.115'
 set :deploy_to, '/home/deployer/fantogether'
 set :repository, 'git@github.com:timromanowski/FT.git'
-set :branch, 'master'
+set :branch, 'mina'
 set :user, 'deployer'
 set :forward_agent, true
 set :port, '22'
@@ -90,6 +90,7 @@ task :deploy => :environment do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     # stop accepting new workers
+        invoke :'rbenv:load' 
         invoke :'sidekiq:quiet'
 
         invoke :'git:clone'

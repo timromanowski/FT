@@ -51,6 +51,7 @@ gem 'link_header'
 gem 'ordinalize'
 gem 'roar'
 gem 'virtus'
+gem 'sidekiq'
 
 
 group :development, :test do
@@ -69,12 +70,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'mina'
-  gem 'mina-sidekiq', :require => false
-  gem 'mina-unicorn', :require => false
+  gem 'mina-sidekiq'
+  gem 'mina-unicorn'
 end
 
 group :production do
   gem 'pg'
-  #gem 'unicorn'
+  gem "nginx"
+  gem 'unicorn'
 end
 
