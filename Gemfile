@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem 'stattleship-ruby', path: 'vendor/gems/stattleship-ruby-0.1.10' 
 #:git => 'http://github.com/stattleship/stattleship-ruby.git'
-#gem 'stattleship-ruby', git: 'https://github.com/stattleship/stattleship-ruby.git'
+gem 'stattleship-ruby', '~> 0.1.23'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'mapbox-rails'
@@ -51,6 +51,7 @@ gem 'link_header'
 gem 'ordinalize'
 gem 'roar'
 gem 'virtus'
+gem 'sidekiq'
 
 
 group :development, :test do
@@ -60,7 +61,6 @@ group :development, :test do
   gem 'annotate'
   gem "erb2haml" 
   gem 'mysql2'
-  gem 'pg'
 end
 
 group :development do
@@ -69,17 +69,14 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-safe-deploy-to', '~> 1.1.1'
-  #gem 'capistrano-github', github: 'capistrano/github'
+  gem 'mina'
+  gem 'mina-sidekiq'
+  gem 'mina-unicorn'
 end
 
 group :production do
   gem 'pg'
-  #gem 'unicorn'
+  gem "nginx"
+  gem 'unicorn'
 end
 

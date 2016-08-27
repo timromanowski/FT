@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
-ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'production'
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
-require File.expand_path(File.dirname(__FILE__) +'/stattleship')
+
+require 'stattleship'
+require 'dotenv'
+Dotenv.load
 
   class StattleshipLoader
     
