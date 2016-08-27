@@ -16,7 +16,7 @@ require 'mina/unicorn'
 set :domain, '107.170.229.115'
 set :deploy_to, '/home/deployer/fantogether'
 set :repository, 'git@github.com:timromanowski/FT.git'
-set :branch, 'mina'
+set :branch, 'master'
 set :user, 'deployer'
 set :forward_agent, true
 set :port, '22'
